@@ -1,0 +1,21 @@
+{
+  "name": "rudderrave/yii2-rave-auth",
+  "description": "Authorization Module For Rave CMS use rest authorization",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Rave",
+      "email": "rudder.rave@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2-authclient": "~2.1.0",
+    "rudderrave/yii2-rave-core-rest": "dev-master",
+    "rudderrave/yii2-rave-user": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "ravesoft\\auth\\": ""
+    }
+  }
+}
