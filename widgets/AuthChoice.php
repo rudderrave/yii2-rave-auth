@@ -1,9 +1,9 @@
 <?php
 
-namespace yeesoft\auth\widgets;
+namespace ravesoft\auth\widgets;
 
-use yeesoft\auth\assets\AuthAsset;
-use yeesoft\auth\models\Auth;
+use ravesoft\auth\assets\AuthAsset;
+use ravesoft\auth\models\Auth;
 use Yii;
 use yii\authclient\ClientInterface;
 use yii\authclient\widgets\AuthChoice as BaseAuthChoice;

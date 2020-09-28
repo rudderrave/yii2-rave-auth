@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\auth\models\forms;
+namespace ravesoft\auth\models\forms;
 
-use yeesoft\models\User;
+use ravesoft\models\User;
 use Yii;
 use yii\base\Model;
 

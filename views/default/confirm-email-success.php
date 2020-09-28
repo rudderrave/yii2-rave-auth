@@ -2,7 +2,7 @@
 
 /**
  * @var yii\web\View $this
- * @var yeesoft\models\User $user
+ * @var ravesoft\models\User $user
  */
 
 $this->title = Yii::t('yee/auth', 'E-mail confirmed');

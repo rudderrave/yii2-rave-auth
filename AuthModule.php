@@ -7,11 +7,11 @@
  */
 
 
-namespace yeesoft\auth;
+namespace ravesoft\auth;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Inflector;
-use yeesoft\models\User;
+use ravesoft\models\User;
 
 /**
  * Auth Module For Yee CMS
@@ -55,7 +55,7 @@ class AuthModule extends \yii\base\Module
      *
      * @var string
      */
-    public $controllerNamespace = 'yeesoft\auth\controllers';
+    public $controllerNamespace = 'ravesoft\auth\controllers';
 
     /**
      * @inheritdoc

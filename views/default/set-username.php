@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var yeesoft\auth\models\forms\SetUsernameForm $model
+ * @var ravesoft\auth\models\forms\SetUsernameForm $model
  */
 $this->title = Yii::t('yee/auth', 'Set Username');
 

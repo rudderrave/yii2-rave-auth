@@ -6,7 +6,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var yeesoft\auth\models\forms\RegistrationForm $model
+ * @var ravesoft\auth\models\forms\RegistrationForm $model
  */
 $this->title = Yii::t('yee/auth', 'Signup');
 

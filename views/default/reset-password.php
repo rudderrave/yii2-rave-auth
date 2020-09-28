@@ -6,7 +6,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var yeesoft\auth\models\forms\PasswordRecoveryForm $model
+ * @var ravesoft\auth\models\forms\PasswordRecoveryForm $model
  */
 $this->title = Yii::t('yee/auth', 'Reset Password');
 

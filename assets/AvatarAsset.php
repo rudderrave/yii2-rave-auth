@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\auth\assets;
+namespace ravesoft\auth\assets;
 
 use Yii;
 use yii\web\AssetBundle;

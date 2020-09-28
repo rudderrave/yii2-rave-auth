@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var yeesoft\auth\models\forms\ConfirmEmailForm $model
+ * @var ravesoft\auth\models\forms\ConfirmEmailForm $model
  */
 $this->title = Yii::t('yee/auth', 'Confirm E-mail');
 

@@ -2,9 +2,9 @@
 
 /**
  * @var $this yii\web\View
- * @var $model yeesoft\auth\models\forms\LoginForm
+ * @var $model ravesoft\auth\models\forms\LoginForm
  */
-use yeesoft\auth\widgets\AuthChoice;
+use ravesoft\auth\widgets\AuthChoice;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 

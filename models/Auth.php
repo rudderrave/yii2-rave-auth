@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\auth\models;
+namespace ravesoft\auth\models;
 
-use yeesoft\models\User;
+use ravesoft\models\User;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -14,7 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property string $source
  * @property string $source_id
  */
-class Auth extends \yeesoft\db\ActiveRecord
+class Auth extends \ravesoft\db\ActiveRecord
 {
 
     /**

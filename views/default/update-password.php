@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var yeesoft\auth\models\forms\UpdatePasswordForm $model
+ * @var ravesoft\auth\models\forms\UpdatePasswordForm $model
  */
 $this->title = Yii::t('yee/auth', 'Update Password');
 

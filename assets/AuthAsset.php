@@ -1,11 +1,11 @@
 <?php
 
-namespace yeesoft\auth\assets;
+namespace ravesoft\auth\assets;
 
 use yii\web\AssetBundle;
 
 /**
- * AuthAsset is an asset bundle for [[yeesoft\auth\widgets\AuthChoice]] widget.
+ * AuthAsset is an asset bundle for [[ravesoft\auth\widgets\AuthChoice]] widget.
  */
 class AuthAsset extends AssetBundle
 {

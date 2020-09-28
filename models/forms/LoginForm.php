@@ -1,9 +1,9 @@
 <?php
 
-namespace yeesoft\auth\models\forms;
+namespace ravesoft\auth\models\forms;
 
-use yeesoft\helpers\YeeHelper;
-use yeesoft\models\User;
+use ravesoft\helpers\YeeHelper;
+use ravesoft\models\User;
 use Yii;
 use yii\base\Model;
 

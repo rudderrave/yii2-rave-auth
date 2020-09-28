@@ -1,6 +1,6 @@
 <?php
 
-namespace yeesoft\auth\models\forms;
+namespace ravesoft\auth\models\forms;
 
 use yii\base\Model;
 use yii\web\UploadedFile;

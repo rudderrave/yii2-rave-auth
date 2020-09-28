@@ -6,7 +6,7 @@
  * @license http://www.apache.org/licenses/LICENSE-2.0
  */
 
-namespace yeesoft\auth;
+namespace ravesoft\auth;
 
 use Yii;
 use yii\base\Exception;
@@ -14,7 +14,7 @@ use yii\base\Exception;
 /**
  * Class AuthAction
  *
- * @package yeesoft\auth
+ * @package ravesoft\auth
  * @author Rave <rudder.rave@gmail.com>
  */
 class AuthAction extends \yii\authclient\AuthAction

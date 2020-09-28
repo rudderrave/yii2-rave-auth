@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\auth\models\forms;
+namespace ravesoft\auth\models\forms;
 
-use yeesoft\models\User;
+use ravesoft\models\User;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Html;
@@ -26,11 +26,11 @@ class SignupForm extends Model
             [['username', 'email', 'password', 'repeat_password'], 'trim'],
             [['email'], 'email'],
             ['username', 'unique',
-                'targetClass' => 'yeesoft\models\User',
+                'targetClass' => 'ravesoft\models\User',
                 'targetAttribute' => 'username',
             ],
             ['email', 'unique',
-                'targetClass' => 'yeesoft\models\User',
+                'targetClass' => 'ravesoft\models\User',
                 'targetAttribute' => 'email',
             ],
             ['username', 'purgeXSS'],

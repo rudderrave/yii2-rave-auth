@@ -1,16 +1,16 @@
 <?php
 
-use yeesoft\auth\assets\AvatarAsset;
-use yeesoft\auth\assets\AvatarUploaderAsset;
-use yeesoft\auth\widgets\AuthChoice;
+use ravesoft\auth\assets\AvatarAsset;
+use ravesoft\auth\assets\AvatarUploaderAsset;
+use ravesoft\auth\widgets\AuthChoice;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yeesoft\helpers\YeeHelper;
+use ravesoft\helpers\YeeHelper;
 
 /**
  * @var yii\web\View $this
- * @var yeesoft\auth\models\forms\SetEmailForm $model
+ * @var ravesoft\auth\models\forms\SetEmailForm $model
  */
 $this->title = Yii::t('yee/auth', 'User Profile');
 $this->params['breadcrumbs'][] = $this->title;
@@ -151,7 +151,7 @@ $col3 = (int) ($col12 / 4);
 
                     <div class="row">
                         <div class="col-md-<?= $col3 ?>">
-                            <?= $form->field($model, 'gender')->dropDownList(yeesoft\models\User::getGenderList()) ?>
+                            <?= $form->field($model, 'gender')->dropDownList(ravesoft\models\User::getGenderList()) ?>
                         </div>
                     </div>
 

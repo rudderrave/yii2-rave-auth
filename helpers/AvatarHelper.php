@@ -1,8 +1,8 @@
 <?php
 
-namespace yeesoft\auth\helpers;
+namespace ravesoft\auth\helpers;
 
-use yeesoft\models\User;
+use ravesoft\models\User;
 use Yii;
 use yii\imagine\Image as Imagine;
 

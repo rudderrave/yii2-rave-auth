@@ -1,22 +1,22 @@
 <?php
 
-namespace yeesoft\auth\controllers;
+namespace ravesoft\auth\controllers;
 
-use yeesoft\auth\assets\AvatarAsset;
-use yeesoft\auth\AuthModule;
-use yeesoft\auth\helpers\AvatarHelper;
-use yeesoft\auth\models\Auth;
-use yeesoft\auth\models\forms\ConfirmEmailForm;
-use yeesoft\auth\models\forms\LoginForm;
-use yeesoft\auth\models\forms\ResetPasswordForm;
-use yeesoft\auth\models\forms\SetEmailForm;
-use yeesoft\auth\models\forms\SetPasswordForm;
-use yeesoft\auth\models\forms\SetUsernameForm;
-use yeesoft\auth\models\forms\SignupForm;
-use yeesoft\auth\models\forms\UpdatePasswordForm;
-use yeesoft\components\AuthEvent;
-use yeesoft\controllers\BaseController;
-use yeesoft\models\User;
+use ravesoft\auth\assets\AvatarAsset;
+use ravesoft\auth\AuthModule;
+use ravesoft\auth\helpers\AvatarHelper;
+use ravesoft\auth\models\Auth;
+use ravesoft\auth\models\forms\ConfirmEmailForm;
+use ravesoft\auth\models\forms\LoginForm;
+use ravesoft\auth\models\forms\ResetPasswordForm;
+use ravesoft\auth\models\forms\SetEmailForm;
+use ravesoft\auth\models\forms\SetPasswordForm;
+use ravesoft\auth\models\forms\SetUsernameForm;
+use ravesoft\auth\models\forms\SignupForm;
+use ravesoft\auth\models\forms\UpdatePasswordForm;
+use ravesoft\components\AuthEvent;
+use ravesoft\controllers\BaseController;
+use ravesoft\models\User;
 use Yii;
 use yii\base\DynamicModel;
 use yii\filters\VerbFilter;
@@ -26,7 +26,7 @@ use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\UploadedFile;
-use yeesoft\widgets\ActiveForm;
+use ravesoft\widgets\ActiveForm;
 
 class DefaultController extends BaseController
 {
@@ -47,7 +47,7 @@ class DefaultController extends BaseController
         return [
             'captcha' => Yii::$app->yee->captchaAction,
             'oauth' => [
-                'class' => 'yeesoft\auth\AuthAction',
+                'class' => 'ravesoft\auth\AuthAction',
                 'successCallback' => [$this, 'onAuthSuccess'],
             ],
         ];
