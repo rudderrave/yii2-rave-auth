@@ -8,7 +8,7 @@ use yii\helpers\Html;
  * @var yii\web\View $this
  * @var ravesoft\auth\models\forms\RegistrationForm $model
  */
-$this->title = Yii::t('yee/auth', 'Signup');
+$this->title = Yii::t('rave/auth', 'Signup');
 
 $col12 = $this->context->module->gridColumns;
 $col9 = (int) ($col12 * 3 / 4);
@@ -44,14 +44,14 @@ $col3 = (int) ($col12 / 4);
                         'captchaAction' => [\yii\helpers\Url::to(['/auth/captcha'])]
                     ]) ?>
 
-                    <?= Html::submitButton(Yii::t('yee/auth', 'Signup'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
+                    <?= Html::submitButton(Yii::t('rave/auth', 'Signup'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
 
                     <div class="row registration-block">
                         <div class="col-sm-<?= $col6 ?>">
-                            <?= Html::a(Yii::t('yee/auth', "Login"), ['default/login']) ?>
+                            <?= Html::a(Yii::t('rave/auth', "Login"), ['default/login']) ?>
                         </div>
                         <div class="col-sm-<?= $col6 ?> text-right">
-                            <?= Html::a(Yii::t('yee/auth', "Forgot password?"), ['default/reset-password']) ?>
+                            <?= Html::a(Yii::t('rave/auth', "Forgot password?"), ['default/reset-password']) ?>
                         </div>
                     </div>
 

@@ -7,7 +7,7 @@ use yii\helpers\Html;
  * @var yii\web\View $this
  * @var ravesoft\auth\models\forms\SetUsernameForm $model
  */
-$this->title = Yii::t('yee/auth', 'Set Username');
+$this->title = Yii::t('rave/auth', 'Set Username');
 
 $col12 = $this->context->module->gridColumns;
 $col9 = (int) ($col12 * 3 / 4);
@@ -35,7 +35,7 @@ $col3 = (int) ($col12 / 4);
 
                     <div class="form-group">
                         <div class="col-sm-offset-<?= $col3 ?> col-sm-<?= $col9 ?>">
-                            <?= Html::submitButton(Yii::t('yee', 'Confirm'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
+                            <?= Html::submitButton(Yii::t('rave', 'Confirm'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
                         </div>
                     </div>
 

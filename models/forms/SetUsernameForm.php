@@ -37,7 +37,7 @@ class SetUsernameForm extends Model
             ]);
 
             if ($exists) {
-                $this->addError('username', Yii::t('yee/auth', 'Login has been taken'));
+                $this->addError('username', Yii::t('rave/auth', 'Login has been taken'));
             }
         }
     }

@@ -5,12 +5,12 @@
  * @var ravesoft\models\User $user
  */
 
-$this->title = Yii::t('yee/auth', 'E-mail confirmed');
+$this->title = Yii::t('rave/auth', 'E-mail confirmed');
 ?>
 <div class="change-own-password-success">
 
     <div class="alert alert-success text-center">
-        <?= Yii::t('yee/auth', 'E-mail confirmed') ?> - <b><?= $user->email ?></b>
+        <?= Yii::t('rave/auth', 'E-mail confirmed') ?> - <b><?= $user->email ?></b>
     </div>
 
 </div>

@@ -2,12 +2,12 @@
 
 use ravesoft\db\SourceMessagesMigration;
 
-class m151126_061233_i18n_yee_auth_source extends SourceMessagesMigration
+class m151126_061233_i18n_rave_auth_source extends SourceMessagesMigration
 {
 
     public function getCategory()
     {
-        return 'yee/auth';
+        return 'rave/auth';
     }
 
     public function getMessages()

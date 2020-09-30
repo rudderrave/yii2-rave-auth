@@ -39,7 +39,7 @@ class SetEmailForm extends Model
             ]);
 
             if ($exists) {
-                $this->addError('email', Yii::t('yee/auth', 'This E-mail already exists'));
+                $this->addError('email', Yii::t('rave/auth', 'This E-mail already exists'));
             }
         }
     }

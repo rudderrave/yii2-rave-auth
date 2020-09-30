@@ -35,8 +35,8 @@ class SetPasswordForm extends Model
     public function attributeLabels()
     {
         return [
-            'password' => Yii::t('yee/auth', 'Password'),
-            'repeat_password' => Yii::t('yee/auth', 'Repeat password'),
+            'password' => Yii::t('rave/auth', 'Password'),
+            'repeat_password' => Yii::t('rave/auth', 'Repeat password'),
         ];
     }
 

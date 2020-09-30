@@ -47,9 +47,9 @@ class UpdatePasswordForm extends Model
     public function attributeLabels()
     {
         return [
-            'current_password' => Yii::t('yee/auth', 'Current password'),
-            'password' => Yii::t('yee/auth', 'Password'),
-            'repeat_password' => Yii::t('yee/auth', 'Repeat password'),
+            'current_password' => Yii::t('rave/auth', 'Current password'),
+            'password' => Yii::t('rave/auth', 'Password'),
+            'repeat_password' => Yii::t('rave/auth', 'Repeat password'),
         ];
     }
 
@@ -58,13 +58,13 @@ class UpdatePasswordForm extends Model
      */
     public function validateCurrentPassword()
     {
-        if (!Yii::$app->yee->checkAttempts()) {
-            $this->addError('current_password', Yii::t('yee/auth', 'Too many attempts'));
+        if (!Yii::$app->rave->checkAttempts()) {
+            $this->addError('current_password', Yii::t('rave/auth', 'Too many attempts'));
             return false;
         }
 
         if (!Yii::$app->security->validatePassword($this->current_password, $this->user->password_hash)) {
-            $this->addError('current_password', Yii::t('yee/auth', "Wrong password"));
+            $this->addError('current_password', Yii::t('rave/auth', "Wrong password"));
         }
     }
 

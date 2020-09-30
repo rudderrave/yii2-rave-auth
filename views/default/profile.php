@@ -6,13 +6,13 @@ use ravesoft\auth\widgets\AuthChoice;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use ravesoft\helpers\YeeHelper;
+use ravesoft\helpers\RaveHelper;
 
 /**
  * @var yii\web\View $this
  * @var ravesoft\auth\models\forms\SetEmailForm $model
  */
-$this->title = Yii::t('yee/auth', 'User Profile');
+$this->title = Yii::t('rave/auth', 'User Profile');
 $this->params['breadcrumbs'][] = $this->title;
 
 AvatarUploaderAsset::register($this);
@@ -31,7 +31,7 @@ $col3 = (int) ($col12 / 4);
             <span class="h4"><?= $this->title ?></span>
         </div>
         <div class="text-right col-md-<?= $col3 ?>">
-            <?= Html::a(Yii::t('yee/auth', 'Update Password'), ['/auth/default/update-password'], ['class' => 'btn btn-primary btn-sm']) ?>
+            <?= Html::a(Yii::t('rave/auth', 'Update Password'), ['/auth/default/update-password'], ['class' => 'btn btn-primary btn-sm']) ?>
         </div>
     </div>
 
@@ -53,7 +53,7 @@ $col3 = (int) ($col12 / 4);
                 </div>
                 <div class="image-actions">
                     <span class="btn btn-primary btn-file"
-                          title="<?= Yii::t('yee/auth', 'Change profile picture') ?>" data-toggle="tooltip"
+                          title="<?= Yii::t('rave/auth', 'Change profile picture') ?>" data-toggle="tooltip"
                           data-placement="left">
                         <i class="fa fa-folder-open fa-lg"></i>
                         <?= Html::fileInput('image', null, ['class' => 'image-input']) ?>
@@ -62,7 +62,7 @@ $col3 = (int) ($col12 / 4);
                     <?=
                     Html::submitButton('<i class="fa fa-save fa-lg"></i>', [
                         'class' => 'btn btn-primary image-submit',
-                        'title' => Yii::t('yee/auth', 'Save profile picture'),
+                        'title' => Yii::t('rave/auth', 'Save profile picture'),
                         'data-toggle' => 'tooltip',
                         'data-placement' => 'top',
                     ])
@@ -70,7 +70,7 @@ $col3 = (int) ($col12 / 4);
 
                     <span class="btn btn-primary image-remove"
                           data-action="<?= Url::to(['/auth/default/remove-avatar']) ?>"
-                          title="<?= Yii::t('yee/auth', 'Remove profile picture') ?>" data-toggle="tooltip"
+                          title="<?= Yii::t('rave/auth', 'Remove profile picture') ?>" data-toggle="tooltip"
                           data-placement="right">
                         <i class="fa fa-remove fa-lg"></i>
                     </span>
@@ -83,9 +83,9 @@ $col3 = (int) ($col12 / 4);
             <div class="oauth-services">
                 <div class="oauth-authorized-services">
                     <div class="label label-primary space-down"
-                         title="<?= Yii::t('yee/auth', 'Click to unlink service') ?>" data-toggle="tooltip"
+                         title="<?= Yii::t('rave/auth', 'Click to unlink service') ?>" data-toggle="tooltip"
                          data-placement="right">
-                        <?= Yii::t('yee/auth', 'Authorized Services') ?>:
+                        <?= Yii::t('rave/auth', 'Authorized Services') ?>:
                     </div>
 
                     <?=
@@ -100,9 +100,9 @@ $col3 = (int) ($col12 / 4);
 
                 <div>
                     <div class="label label-primary space-down"
-                         title="<?= Yii::t('yee/auth', 'Click to connect with service') ?>" data-toggle="tooltip"
+                         title="<?= Yii::t('rave/auth', 'Click to connect with service') ?>" data-toggle="tooltip"
                          data-placement="right">
-                        <?= Yii::t('yee/auth', 'Non Authorized Services') ?>:
+                        <?= Yii::t('rave/auth', 'Non Authorized Services') ?>:
                     </div>
 
                     <?=
@@ -160,7 +160,7 @@ $col3 = (int) ($col12 / 4);
                             <?= $form->field($model, 'birth_day')->textInput(['maxlength' => 2]) ?>
                         </div>
                         <div class="col-md-<?= $col3 ?>">
-                            <?= $form->field($model, 'birth_month')->dropDownList(YeeHelper::getMonthsList()) ?>
+                            <?= $form->field($model, 'birth_month')->dropDownList(RaveHelper::getMonthsList()) ?>
                         </div>
                         <div class="col-md-<?= $col3 ?>">
                             <?= $form->field($model, 'birth_year')->textInput(['maxlength' => 4]) ?>
@@ -181,7 +181,7 @@ $col3 = (int) ($col12 / 4);
                 </div>
             </div>
             
-            <?= Html::submitButton(Yii::t('yee/auth', 'Save Profile'), ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton(Yii::t('rave/auth', 'Save Profile'), ['class' => 'btn btn-primary']) ?>
  
 
         </div>
@@ -192,8 +192,8 @@ $col3 = (int) ($col12 / 4);
 
 
 <?php
-$confRemovingAuthMessage = Yii::t('yee/auth', 'Are you sure you want to unlink this authorization?');
-$confRemovingAvatarMessage = Yii::t('yee/auth', 'Are you sure you want to delete your profile picture?');
+$confRemovingAuthMessage = Yii::t('rave/auth', 'Are you sure you want to unlink this authorization?');
+$confRemovingAvatarMessage = Yii::t('rave/auth', 'Are you sure you want to delete your profile picture?');
 $js = <<<JS
 confRemovingAuthMessage = "{$confRemovingAuthMessage}";
 confRemovingAvatarMessage = "{$confRemovingAvatarMessage}";

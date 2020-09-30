@@ -45,7 +45,7 @@ class DefaultController extends BaseController
     public function actions()
     {
         return [
-            'captcha' => Yii::$app->yee->captchaAction,
+            'captcha' => Yii::$app->rave->captchaAction,
             'oauth' => [
                 'class' => 'ravesoft\auth\AuthAction',
                 'successCallback' => [$this, 'onAuthSuccess'],
@@ -92,7 +92,7 @@ class DefaultController extends BaseController
             } else { // signup
                 if (isset($attributes['email']) && $attributes['email'] && User::find()->where(['email' => $attributes['email']])->exists()) {
                     Yii::$app->getSession()->setFlash('error', [
-                        Yii::t('yee/auth', "User with the same email as in {client} account already exists but isn't linked to it. Login using email first to link it.", ['client' => $client->getTitle()]),
+                        Yii::t('rave/auth', "User with the same email as in {client} account already exists but isn't linked to it. Login using email first to link it.", ['client' => $client->getTitle()]),
                     ]);
                     Yii::$app->getResponse()->redirect(['auth/default/login']);
                 } else {
@@ -224,7 +224,7 @@ class DefaultController extends BaseController
                 $transaction->commit();
                 Yii::$app->user->login($user);
             } else {
-                Yii::$app->session->setFlash('error', 'Error 901: ' . Yii::t('yee/auth', "Authentication error occurred."));
+                Yii::$app->session->setFlash('error', 'Error 901: ' . Yii::t('rave/auth', "Authentication error occurred."));
                 return Yii::$app->response->redirect(Url::to(['/auth/default/login']));
             }
         } else {
@@ -239,7 +239,7 @@ class DefaultController extends BaseController
                 }
             }
 
-            Yii::$app->session->setFlash('error', 'Error 902: ' . Yii::t('yee/auth', "Authentication error occurred."));
+            Yii::$app->session->setFlash('error', 'Error 902: ' . Yii::t('rave/auth', "Authentication error occurred."));
             return Yii::$app->response->redirect(Url::to(['/auth/default/login']));
         }
 
@@ -309,10 +309,10 @@ class DefaultController extends BaseController
                 // Trigger event "after registration" and checks if it's valid
                 if ($user && $this->triggerModuleEvent(AuthEvent::AFTER_REGISTRATION, ['model' => $model, 'user' => $user])) {
 
-                    if (Yii::$app->yee->emailConfirmationRequired) {
+                    if (Yii::$app->rave->emailConfirmationRequired) {
                         return $this->renderIsAjax('signup-confirmation', compact('user'));
                     } else {
-                        $user->assignRoles(Yii::$app->yee->defaultRoles);
+                        $user->assignRoles(Yii::$app->rave->defaultRoles);
 
                         Yii::$app->user->login($user);
 
@@ -335,7 +335,7 @@ class DefaultController extends BaseController
      */
     public function actionConfirmRegistrationEmail($token)
     {
-        if (Yii::$app->yee->emailConfirmationRequired) {
+        if (Yii::$app->rave->emailConfirmationRequired) {
 
             $model = new SignupForm();
             $user = $model->checkConfirmationToken($token);
@@ -344,7 +344,7 @@ class DefaultController extends BaseController
                 return $this->renderIsAjax('confirm-email-success', compact('user'));
             }
 
-            throw new NotFoundHttpException(Yii::t('yee/auth', 'Token not found. It may be expired'));
+            throw new NotFoundHttpException(Yii::t('rave/auth', 'Token not found. It may be expired'));
         }
     }
 
@@ -405,7 +405,7 @@ class DefaultController extends BaseController
                         return $this->renderIsAjax('reset-password-success');
                     }
                 } else {
-                    Yii::$app->session->setFlash('error', Yii::t('yee/auth', "Unable to send message for email provided"));
+                    Yii::$app->session->setFlash('error', Yii::t('rave/auth', "Unable to send message for email provided"));
                 }
             }
         }
@@ -430,7 +430,7 @@ class DefaultController extends BaseController
         $user = User::findByConfirmationToken($token);
 
         if (!$user) {
-            throw new NotFoundHttpException(Yii::t('yee/auth', 'Token not found. It may be expired. Try reset password once more'));
+            throw new NotFoundHttpException(Yii::t('rave/auth', 'Token not found. It may be expired. Try reset password once more'));
         }
 
         $model = new UpdatePasswordForm([
@@ -483,7 +483,7 @@ class DefaultController extends BaseController
                         return $this->refresh();
                     }
                 } else {
-                    Yii::$app->session->setFlash('error', Yii::t('yee/auth', "Unable to send message for email provided"));
+                    Yii::$app->session->setFlash('error', Yii::t('rave/auth', "Unable to send message for email provided"));
                 }
             }
         }
@@ -526,7 +526,7 @@ class DefaultController extends BaseController
     {
         $event = new AuthEvent($data);
 
-        Yii::$app->yee->trigger($eventName, $event);
+        Yii::$app->rave->trigger($eventName, $event);
 
         return $event->isValid;
     }
@@ -571,7 +571,7 @@ class DefaultController extends BaseController
                     return AvatarHelper::saveAvatar($model->image);
                 } catch (Exception $exc) {
                     Yii::$app->response->statusCode = 400;
-                    return Yii::t('yee', 'An unknown error occurred.');
+                    return Yii::t('rave', 'An unknown error occurred.');
                 }
             } else {
                 $errors = $model->getErrors();

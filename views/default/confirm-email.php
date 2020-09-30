@@ -7,7 +7,7 @@ use yii\helpers\Html;
  * @var yii\web\View $this
  * @var ravesoft\auth\models\forms\ConfirmEmailForm $model
  */
-$this->title = Yii::t('yee/auth', 'Confirm E-mail');
+$this->title = Yii::t('rave/auth', 'Confirm E-mail');
 
 $col12 = $this->context->module->gridColumns;
 $col9 = (int) ($col12 * 3 / 4);
@@ -42,7 +42,7 @@ $col3 = (int) ($col12 / 4);
 
                         <div class="form-group">
                             <div class="col-sm-offset-<?= $col3 ?> col-sm-<?= $col9 ?>">
-                                <?= Html::submitButton(Yii::t('yee/auth', 'Confirm'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
+                                <?= Html::submitButton(Yii::t('rave/auth', 'Confirm'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
                             </div>
                         </div>
 
@@ -51,7 +51,7 @@ $col3 = (int) ($col12 / 4);
                     <?php else: ?>
 
                         <div class="alert alert-info text-center">
-                            <?= Yii::t('yee/auth', 'E-mail with activation link has been sent to <b>{email}</b>. This link will expire in {minutes} min.', [
+                            <?= Yii::t('rave/auth', 'E-mail with activation link has been sent to <b>{email}</b>. This link will expire in {minutes} min.', [
                                 'email' => $model->user->email,
                                 'minutes' => $model->getTokenTimeLeft(true),
                             ]) ?>

@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
  */
 class AuthAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/rudderrave/yii2-yee-auth/assets/source';
+    public $sourcePath = '@vendor/rudderrave/yii2-rave-auth/assets/source';
     public $css = [
         'authstyle.css',
     ];

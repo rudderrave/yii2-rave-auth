@@ -7,7 +7,7 @@ use yii\helpers\Html;
  * @var yii\web\View $this
  * @var ravesoft\auth\models\forms\UpdatePasswordForm $model
  */
-$this->title = Yii::t('yee/auth', 'Update Password');
+$this->title = Yii::t('rave/auth', 'Update Password');
 
 $col12 = $this->context->module->gridColumns;
 $col9 = (int) ($col12 * 3 / 4);
@@ -44,7 +44,7 @@ $col3 = (int) ($col12 / 4);
 
                         <?= $form->field($model, 'repeat_password')->passwordInput(['maxlength' => 255]) ?>
 
-                        <?= Html::submitButton(Yii::t('yee', 'Update'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
+                        <?= Html::submitButton(Yii::t('rave', 'Update'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
 
                         <?php ActiveForm::end() ?>
                     </div>

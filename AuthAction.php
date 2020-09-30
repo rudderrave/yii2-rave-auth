@@ -29,7 +29,7 @@ class AuthAction extends \yii\authclient\AuthAction
             return parent::run();
         } catch (Exception $ex) {
             Yii::$app->session->setFlash('error', $ex->getMessage());
-            //Yii::$app->session->setFlash('error', Yii::t('yee/auth', "Authentication error occured."));
+            //Yii::$app->session->setFlash('error', Yii::t('rave/auth', "Authentication error occured."));
 
             return $this->redirectCancel();
         }

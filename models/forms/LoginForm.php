@@ -2,7 +2,7 @@
 
 namespace ravesoft\auth\models\forms;
 
-use ravesoft\helpers\YeeHelper;
+use ravesoft\helpers\RaveHelper;
 use ravesoft\models\User;
 use Yii;
 use yii\base\Model;
@@ -30,9 +30,9 @@ class LoginForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('yee/auth', 'Login'),
-            'password' => Yii::t('yee/auth', 'Password'),
-            'rememberMe' => Yii::t('yee/auth', 'Remember me'),
+            'username' => Yii::t('rave/auth', 'Login'),
+            'password' => Yii::t('rave/auth', 'Password'),
+            'rememberMe' => Yii::t('rave/auth', 'Remember me'),
         ];
     }
 
@@ -42,15 +42,15 @@ class LoginForm extends Model
      */
     public function validatePassword()
     {
-        if (!Yii::$app->yee->checkAttempts()) {
-            $this->addError('password', Yii::t('yee/auth', 'Too many attempts'));
+        if (!Yii::$app->rave->checkAttempts()) {
+            $this->addError('password', Yii::t('rave/auth', 'Too many attempts'));
             return false;
         }
 
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError('password', Yii::t('yee/auth', 'Incorrect username or password'));
+                $this->addError('password', Yii::t('rave/auth', 'Incorrect username or password'));
             }
         }
     }
@@ -66,8 +66,8 @@ class LoginForm extends Model
             $ips = explode(',', $user->bind_to_ip);
             $ips = array_map('trim', $ips);
 
-            if (!in_array(YeeHelper::getRealIp(), $ips)) {
-                $this->addError('password', Yii::t('yee/auth', "You could not login from this IP"));
+            if (!in_array(RaveHelper::getRealIp(), $ips)) {
+                $this->addError('password', Yii::t('rave/auth', "You could not login from this IP"));
             }
         }
     }

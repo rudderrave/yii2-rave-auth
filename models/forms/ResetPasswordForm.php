@@ -42,8 +42,8 @@ class ResetPasswordForm extends Model
      */
     public function validateEmailConfirmedAndUserActive()
     {
-        if (!Yii::$app->yee->checkAttempts()) {
-            $this->addError('email', Yii::t('yee/auth', 'Too many attempts'));
+        if (!Yii::$app->rave->checkAttempts()) {
+            $this->addError('email', Yii::t('rave/auth', 'Too many attempts'));
             return false;
         }
 
@@ -56,7 +56,7 @@ class ResetPasswordForm extends Model
         if ($user) {
             $this->user = $user;
         } else {
-            $this->addError('email', Yii::t('yee/auth', 'E-mail is invalid'));
+            $this->addError('email', Yii::t('rave/auth', 'E-mail is invalid'));
         }
     }
 
@@ -67,7 +67,7 @@ class ResetPasswordForm extends Model
     {
         return [
             'email' => 'E-mail',
-            'captcha' => Yii::t('yee/auth', 'Captcha'),
+            'captcha' => Yii::t('rave/auth', 'Captcha'),
         ];
     }
 
@@ -85,11 +85,11 @@ class ResetPasswordForm extends Model
         $this->user->generateConfirmationToken();
         $this->user->save(false);
 
-        return Yii::$app->mailer->compose(Yii::$app->yee->emailTemplates['password-reset'],
+        return Yii::$app->mailer->compose(Yii::$app->rave->emailTemplates['password-reset'],
             ['user' => $this->user])
-            ->setFrom(Yii::$app->yee->emailSender)
+            ->setFrom(Yii::$app->rave->emailSender)
             ->setTo($this->email)
-            ->setSubject(Yii::t('yee/auth', 'Password reset for') . ' ' . Yii::$app->name)
+            ->setSubject(Yii::t('rave/auth', 'Password reset for') . ' ' . Yii::$app->name)
             ->send();
     }
 }

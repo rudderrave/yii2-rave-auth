@@ -8,7 +8,7 @@ use ravesoft\auth\widgets\AuthChoice;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = Yii::t('yee/auth', 'Authorization');
+$this->title = Yii::t('rave/auth', 'Authorization');
 
 $col12 = $this->context->module->gridColumns;
 $col9 = (int) ($col12 * 3 / 4);
@@ -42,8 +42,8 @@ $col3 = (int) ($col12 / 4);
 
                         <?= $form->field($model, 'rememberMe')->checkbox(['value' => true]) ?>
 
-                        <?= Html::submitButton(Yii::t('yee/auth', 'Login'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
-                        <?php if (!Yii::$app->yee->auth): ?>
+                        <?= Html::submitButton(Yii::t('rave/auth', 'Login'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
+                        <?php if (!Yii::$app->rave->auth): ?>
                             <div class="row registration-block">
                                 <div class="col-sm-<?= $col12 ?>">
                                     <?=
@@ -57,10 +57,10 @@ $col3 = (int) ($col12 / 4);
 
                             <div class="row registration-block">
                                 <div class="col-sm-<?= $col6 ?>">
-                                    <?= Html::a(Yii::t('yee/auth', "Registration"), ['default/signup']) ?>
+                                    <?= Html::a(Yii::t('rave/auth', "Registration"), ['default/signup']) ?>
                                 </div>
                                 <div class="col-sm-<?= $col6 ?> text-right">
-                                    <?= Html::a(Yii::t('yee/auth', "Forgot password?"), ['default/reset-password']) ?>
+                                    <?= Html::a(Yii::t('rave/auth', "Forgot password?"), ['default/reset-password']) ?>
                                 </div>
                             </div>
                         <?php endif; ?>

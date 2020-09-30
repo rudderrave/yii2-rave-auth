@@ -35,8 +35,8 @@ class SignupForm extends Model
             ],
             ['username', 'purgeXSS'],
             ['username', 'string', 'max' => 50],
-            ['username', 'match', 'pattern' => Yii::$app->yee->usernameRegexp, 'message' => Yii::t('yee/auth', 'The username should contain only Latin letters, numbers and the following characters: "-" and "_".')],
-            ['username', 'match', 'not' => true, 'pattern' => Yii::$app->yee->usernameBlackRegexp, 'message' => Yii::t('yee/auth', 'Username contains not allowed characters or words.')],
+            ['username', 'match', 'pattern' => Yii::$app->rave->usernameRegexp, 'message' => Yii::t('rave/auth', 'The username should contain only Latin letters, numbers and the following characters: "-" and "_".')],
+            ['username', 'match', 'not' => true, 'pattern' => Yii::$app->rave->usernameBlackRegexp, 'message' => Yii::t('rave/auth', 'Username contains not allowed characters or words.')],
             ['password', 'string', 'max' => 255],
             ['repeat_password', 'compare', 'compareAttribute' => 'password'],
         ];
@@ -60,11 +60,11 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => Yii::t('yee/auth', 'Login'),
-            'email' => Yii::t('yee/auth', 'E-mail'),
-            'password' => Yii::t('yee/auth', 'Password'),
-            'repeat_password' => Yii::t('yee/auth', 'Repeat password'),
-            'captcha' => Yii::t('yee/auth', 'Captcha'),
+            'username' => Yii::t('rave/auth', 'Login'),
+            'email' => Yii::t('rave/auth', 'E-mail'),
+            'password' => Yii::t('rave/auth', 'Password'),
+            'repeat_password' => Yii::t('rave/auth', 'Repeat password'),
+            'captcha' => Yii::t('rave/auth', 'Captcha'),
         ];
     }
 
@@ -84,18 +84,18 @@ class SignupForm extends Model
         $user->username = $this->username;
         $user->email = $this->email;
 
-        if (Yii::$app->yee->emailConfirmationRequired) {
+        if (Yii::$app->rave->emailConfirmationRequired) {
             $user->status = User::STATUS_INACTIVE;
             $user->generateConfirmationToken();
             // $user->save(false);
 
             if (!$this->sendConfirmationEmail($user)) {
-                $this->addError('username', Yii::t('yee/auth', 'Could not send confirmation email'));
+                $this->addError('username', Yii::t('rave/auth', 'Could not send confirmation email'));
             }
         }
 
         if (!$user->save()) {
-            $this->addError('username', Yii::t('yee/auth', 'Login has been taken'));
+            $this->addError('username', Yii::t('rave/auth', 'Login has been taken'));
         } else {
             return $user;
         }
@@ -110,10 +110,10 @@ class SignupForm extends Model
      */
     protected function sendConfirmationEmail($user)
     {
-        return Yii::$app->mailer->compose(Yii::$app->yee->emailTemplates['signup-confirmation'], ['user' => $user])
-            ->setFrom(Yii::$app->yee->emailSender)
+        return Yii::$app->mailer->compose(Yii::$app->rave->emailTemplates['signup-confirmation'], ['user' => $user])
+            ->setFrom(Yii::$app->rave->emailSender)
             ->setTo($user->email)
-            ->setSubject(Yii::t('yee/auth', 'E-mail confirmation for') . ' ' . Yii::$app->name)
+            ->setSubject(Yii::t('rave/auth', 'E-mail confirmation for') . ' ' . Yii::$app->name)
             ->send();
     }
 
@@ -134,7 +134,7 @@ class SignupForm extends Model
             $user->email_confirmed = 1;
             $user->removeConfirmationToken();
             $user->save(false);
-            $user->assignRoles(Yii::$app->yee->defaultRoles);
+            $user->assignRoles(Yii::$app->rave->defaultRoles);
             Yii::$app->user->login($user);
 
             return $user;

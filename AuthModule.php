@@ -14,7 +14,7 @@ use yii\helpers\Inflector;
 use ravesoft\models\User;
 
 /**
- * Auth Module For Yee CMS
+ * Auth Module For Rave CMS
  *
  * @author Rave <rudder.rave@gmail.com>
  */

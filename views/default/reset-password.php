@@ -8,7 +8,7 @@ use yii\helpers\Html;
  * @var yii\web\View $this
  * @var ravesoft\auth\models\forms\PasswordRecoveryForm $model
  */
-$this->title = Yii::t('yee/auth', 'Reset Password');
+$this->title = Yii::t('rave/auth', 'Reset Password');
 
 $col12 = $this->context->module->gridColumns;
 $col9 = (int) ($col12 * 3 / 4);
@@ -44,7 +44,7 @@ $col3 = (int) ($col12 / 4);
                             'captchaAction' => ['/auth/captcha']
                         ]) ?>
 
-                        <?= Html::submitButton(Yii::t('yee/auth', 'Reset'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
+                        <?= Html::submitButton(Yii::t('rave/auth', 'Reset'), ['class' => 'btn btn-lg btn-primary btn-block']) ?>
 
                         <?php ActiveForm::end() ?>
                     </div>
